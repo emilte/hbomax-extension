@@ -1,3 +1,5 @@
+// source: https://codepen.io/thatkookooguy/pen/WNGqmKN
+
 // Made sure this also works with setting
 // the cursor in a css class by nulling
 // the cursor in the style when active

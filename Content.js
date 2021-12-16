@@ -6,32 +6,32 @@
 // to activate on the entire document
 startInactivityCheck(
     document.querySelector('body'),
-    2000,
+    3000,
     (element) => element.style.cursor = 'none',
     (element) => element.style.cursor = null
 );
   
 function startInactivityCheck(element, delay, callbackInactivity, callbackActive) {
-let timeoutId;
+    let timeoutId;
 
-setupTimers();
+    setupTimers();
 
-function setupTimers () {
-    element.addEventListener("mousemove", resetTimer, false);
-    element.addEventListener("mousedown", resetTimer, false);
-    element.addEventListener("keypress", resetTimer, false);
-    element.addEventListener("touchmove", resetTimer, false);
+    function setupTimers () {
+        element.addEventListener("mousemove", resetTimer, false);
+        element.addEventListener("mousedown", resetTimer, false);
+        element.addEventListener("keypress", resetTimer, false);
+        element.addEventListener("touchmove", resetTimer, false);
 
-    startTimer();
-}
+        startTimer();
+    }
 
-function startTimer() { 
-    timeoutId = setTimeout(() => callbackInactivity(element), delay);
-}
+    function startTimer() { 
+        timeoutId = setTimeout(() => callbackInactivity(element), delay);
+    }
 
-function resetTimer() {
-    callbackActive(element);
-    clearTimeout(timeoutId);
-    startTimer();
-}
+    function resetTimer() {
+        callbackActive(element);
+        clearTimeout(timeoutId);
+        startTimer();
+    }
 }

@@ -1,10 +1,14 @@
 {
     "manifest_version": 3,
     "name": "hbomax-extension",
+    "description": "Hide cursor when streaming.",
     "version": "1.0.0",
     "content_scripts": [
         {
-            "matches": ["https://play.hbomax.com/*"],
+            "matches": [
+                "https://play.hbomax.com/episode/*", // series
+                "https://play.hbomax.com/feature/*" // movies, documentaries etc
+            ],
             "js": ["Content.js"]
         }
     ]

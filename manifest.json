@@ -9,7 +9,7 @@
                 "https://play.hbomax.com/episode/*", // series
                 "https://play.hbomax.com/feature/*" // movies, documentaries etc
             ],
-            "js": ["Content.js"]
+            "js": ["script.js"]
         }
     ]
 }
